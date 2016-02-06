@@ -1,6 +1,10 @@
 class MapsController < ApplicationController
   def show
     @code = map_params[:code]
+    @map = Map.find_by(code: @code)
+    unless @map
+      redirect_to root_url
+    end
   end
 
   def create
