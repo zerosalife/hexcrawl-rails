@@ -1,2 +1,23 @@
-<h1>Maps#show</h1>
-<p>Find me in app/views/maps/show.html.erb</p>
+<header class="header">
+  <div class="container">
+    <div class="header-left header-menu">
+      <span class="header-item">
+        <%= link_to 'Start Over', root_path, class: 'header-item' %>
+      </span>
+    </div>
+    <div class="header-center">
+      <%= link_to 'Hexcrawl', root_path, class: 'header-item' %>
+    </div>
+    <span class="header-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="header-right header-menu">
+      <span class="header-item">
+        <%= link_to "#{@code}", maps_path(@code) %>
+      </span>
+    </div>
+</header>
+<div class="map">
+</div>
