@@ -7,12 +7,13 @@
       <h2 class="subtitle">
         Persistent, procedurally generated campaign worlds
       </h2>
-      <p class="control is-grouped">
-        <input class="input" type="text" placeholder="Enter 4-Letter Map Code">
-        <a href="#" class="button is-success">
-          Crawl
-        </a>
-      </p>
+      <%= form_for :map do %>
+        <p class="control is-grouped">
+          <%= text_field_tag(:code, nil, class: 'input', placeholder: 'Enter 4-Letter Map Code') %>
+          <%= button_tag 'Crawl', class: 'button is-success' %>
+        </p>
+      <% end %>
+      <br />
         <a href="/maps" class="button is-primary is-large is-outlined is-inverted" data-method="post">
           Generate New Map
           <i class="fa fa-map"></i>
