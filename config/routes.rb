@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/maps/:code', to: 'maps#show', as: 'maps'
-
+  resource :maps, only: :create
 
   root 'main#index'
 
