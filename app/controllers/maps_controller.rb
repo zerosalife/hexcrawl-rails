@@ -3,7 +3,7 @@ class MapsController < ApplicationController
     @code = map_params[:code]
     @map = Map.find_by(code: @code)
     unless @map
-      redirect_to root_url
+      redirect_to root_url, flash: {warning: "Invalid map code."}
     end
   end
 
