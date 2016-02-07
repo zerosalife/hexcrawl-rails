@@ -2,6 +2,7 @@ require 'set'
 
 class Map < ActiveRecord::Base
   before_validation :create_code, on: :create
+  has_many :tiles, dependent: :destroy
 
   CODE_CHARS = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
   CODE_LENGTH = 4
