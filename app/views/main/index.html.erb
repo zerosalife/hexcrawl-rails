@@ -9,7 +9,7 @@
       </h2>
       <%= form_for :map do %>
         <p class="control is-grouped">
-          <%= text_field_tag(:code, nil, class: 'input', placeholder: 'Enter 4-Letter Map Code') %>
+          <%= text_field_tag(:code, nil, class: 'input', placeholder: 'Enter 4-Letter Map Code', required: 'required') %>
           <%= button_tag 'Crawl', class: 'button is-success' %>
         </p>
       <% end %>
