@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204180636) do
+ActiveRecord::Schema.define(version: 20160207025159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,17 @@ ActiveRecord::Schema.define(version: 20160204180636) do
 
   add_index "maps", ["code"], name: "index_maps_on_code", unique: true, using: :btree
 
+  create_table "tiles", force: :cascade do |t|
+    t.boolean  "revealed"
+    t.json     "data"
+    t.string   "tile_icon"
+    t.text     "notes"
+    t.integer  "map_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tiles", ["map_id"], name: "index_tiles_on_map_id", using: :btree
+
+  add_foreign_key "tiles", "maps"
 end
