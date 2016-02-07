@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207025159) do
+ActiveRecord::Schema.define(version: 20160207202523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20160207025159) do
     t.integer  "map_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "x_coord"
+    t.integer  "y_coord"
   end
 
   add_index "tiles", ["map_id"], name: "index_tiles_on_map_id", using: :btree
