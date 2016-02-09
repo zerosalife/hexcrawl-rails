@@ -20,4 +20,15 @@
     </div>
 </header>
 <div class="map">
+  <div class="tile-container">
+    <% @map.tiles.each do |t| %>
+      <a href="#">
+        <div class="tile">
+          <div class="tile-coordinates">
+            <%= sprintf("%02d%02d", t.x_coord, t.y_coord) %>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
 </div>
