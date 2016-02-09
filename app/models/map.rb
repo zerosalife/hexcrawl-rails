@@ -19,8 +19,8 @@ class Map < ActiveRecord::Base
   end
 
   def generate_tiles
-    (0...MAP_DIM_SIZE).each do |x|
-      (0...MAP_DIM_SIZE).each do |y|
+    (0...MAP_DIM_SIZE).each do |y|
+      (0...MAP_DIM_SIZE).each do |x|
         self.tiles << Tile.create(x_coord: x, y_coord: y, map_id: self.id)
       end
     end
