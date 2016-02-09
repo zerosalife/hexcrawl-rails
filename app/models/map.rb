@@ -19,11 +19,13 @@ class Map < ActiveRecord::Base
   end
 
   def generate_tiles
+    tiles_attrs = []
     (0...MAP_DIM_SIZE).each do |y|
       (0...MAP_DIM_SIZE).each do |x|
-        self.tiles << Tile.create(x_coord: x, y_coord: y, map_id: self.id)
+        tiles_attrs << {x_coord: x, y_coord: y, map_id: self.id}
       end
     end
+    self.tiles = Tile.create(tiles_attrs)
   end
 
   def generate_code
