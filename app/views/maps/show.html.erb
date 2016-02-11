@@ -22,13 +22,13 @@
 <div class="map">
   <div class="tile-container">
     <% @map.tiles.each do |t| %>
-      <a href="#">
+      <%= link_to(tiles_path(id: t.id, code: @map.code)) do %>
         <div class="tile">
           <div class="tile-coordinates">
             <%= sprintf("%02d%02d", t.x_coord, t.y_coord) %>
           </div>
         </div>
-      </a>
+      <% end %>
     <% end %>
   </div>
 </div>
