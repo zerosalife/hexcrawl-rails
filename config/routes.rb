@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  
+  get '/maps/:code/tiles/:id', to: 'tiles#show', as: 'tiles'
+
   get '/maps/:code', to: 'maps#show', as: 'maps'
   resource :maps, only: :create
 
   post '/', to: 'main#crawl'
   root 'main#index'
-
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
