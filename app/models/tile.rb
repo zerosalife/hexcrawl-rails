@@ -3,26 +3,21 @@ class Tile < ActiveRecord::Base
   validates :x_coord, presence: true
   validates :y_coord, presence: true
 
-  before_validation :generate_data, on: :create
-
-  TILE_DATA = [
-    {"biome":"desert", "loot":"2 gold", "encounter":"3 trolls"},
-    {"biome": "mountain", "loot": "soykaf", "encounter": "2 raiders"},
-    {"biome": "high plains", "loot": "scrap", "encounter": "2 raiders"},
-    {"biome": "high plains", "loot": "2 ammo clips", "encounter": "3 ghouls"},
-    {"biome": "high plains", "loot": "a tent", "encounter": "a glowing one and 3 ghouls"}
-  ]
+  before_validation :roll, on: :create
 
   # TODO: move into a presenter, maybe?
   def coords_string
     "%02d%02d" % [x_coord, y_coord]
   end
 
-  def generate_data
-    self.data = {}
+  def roll(node = "")
+    if node.present?
+      if TileData.valid_keys.include?(node)
+        self.data[node] = TileData.sample(node)
+      end
+    else
+      self.data = TileData.sample_all
+    end
   end
-
-  def reroll(node)
-    self.data = TILE_DATA.sample
-  end
+  alias_method :reroll, :roll
 end
