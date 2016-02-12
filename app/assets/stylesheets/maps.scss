@@ -14,3 +14,14 @@
     margin-bottom: -2px;
     border: 2px solid #d3d6db;
 }
+
+body .header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  box-shadow: 0 0 5px 5px #ccc;
+}
+
+body .map {
+  margin-top: 50px * 1.2;
+}
