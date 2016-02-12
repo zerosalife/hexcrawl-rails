@@ -1,6 +1,6 @@
 <header class="header">
   <div class="container">
-    <div class="header-left header-menu">
+    <div class="header-left">
       <span class="header-item">
         <%= link_to 'Start Over', root_path, class: 'header-item' %>
       </span>
@@ -8,12 +8,7 @@
     <div class="header-center">
       <%= link_to 'Hexcrawl', root_path, class: 'header-item' %>
     </div>
-    <span class="header-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="header-right header-menu">
+    <div class="header-right">
       <span class="header-item">
         <%= link_to "#{@code}", maps_path(@code) %>
       </span>
