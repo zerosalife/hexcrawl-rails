@@ -2,6 +2,7 @@ require 'set'
 
 class Map < ActiveRecord::Base
   has_many :tiles, -> { order 'x_coord ASC, y_coord ASC' }, dependent: :destroy, autosave: true
+  validates_associated :tiles
   before_validation :create_code, :generate_tiles, on: :create
 
   CODE_CHARS = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
@@ -19,10 +20,9 @@ class Map < ActiveRecord::Base
   end
 
   def generate_tiles
-    tiles_attrs = []
     (0...MAP_DIM_SIZE).each do |y|
       (0...MAP_DIM_SIZE).each do |x|
-        self.tiles.build(x_coord: x, y_coord: y, map: self)
+        self.tiles.build(x_coord: x, y_coord: y)
       end
     end
   end

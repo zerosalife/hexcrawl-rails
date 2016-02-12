@@ -19,12 +19,21 @@
     </div>
 </header>
 <div class="section">
-  <h1 class="title">Tile: <%= @tile.coords_string %></h1>
-  <table class="table is-striped">
+  <div class="columns">
+    <h1 class="column title">Tile: <%= @tile.coords_string %></h1>
+    <div class="reroll column is-quarter">
+      <%= button_to reroll_tile_path(@tile), class: 'button' do -%>
+        <i class="fa fa-rotate-left"></i> Reroll Tile
+      <% end -%>
+    </div>
+  </div>
+
+  <table class="table is-striped tile-data-table">
     <thead>
       <tr>
-	<th>Name</th>
-	<th>Value</th>
+        <th>Name</th>
+        <th>Value</th>
+        <th>Reroll</th>
       </tr>
     </thead>
     <tbody>
@@ -32,6 +41,11 @@
         <tr>
           <td><%= k.humanize %></td>
           <td><%= v.humanize %></td>
+          <td>
+            <%= button_to reroll_tile_path(@tile, node: k), class: 'button' do -%>
+              <i class="fa fa-rotate-left"></i>
+            <% end -%>
+          </td>
         </tr>
       <% end %>
     </tbody>
