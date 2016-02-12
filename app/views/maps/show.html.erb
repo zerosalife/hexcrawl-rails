@@ -20,7 +20,7 @@
       <%= link_to(tiles_path(id: t.id, code: @map.code)) do %>
         <div class="tile">
           <div class="tile-coordinates">
-            <%= sprintf("%02d%02d", t.x_coord, t.y_coord) %>
+            <%= t.coords_string %>
           </div>
         </div>
       <% end %>
