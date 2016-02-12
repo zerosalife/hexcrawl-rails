@@ -1,2 +1,43 @@
-<h1>Tiles#show</h1>
-<p>Find me in app/views/tiles/show.html.erb</p>
+<header class="header">
+  <div class="container">
+    <div class="header-left">
+      <span class="header-item">
+        <%= link_to(maps_path(@tile.map.code), class: 'header-item') do %>
+          <span class="icon">
+            <i class="fa fa-arrow-left is-primary"></i>
+          </span>
+        <% end %>
+      </span>
+    </div>
+    <div class="header-center">
+      <%= link_to 'Hexcrawl', root_path, class: 'header-item' %>
+    </div>
+    <div class="header-right">
+      <span class="header-item">
+        <%= link_to "#{@tile.map.code}", maps_path(@tile.map.code) %>
+      </span>
+    </div>
+</header>
+<div class="section">
+  <h1 class="title">Tile: <%= @tile.coords_string %></h1>
+  <table class="table is-striped">
+    <thead>
+      <tr>
+	<th>Name</th>
+	<th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tile.data.each do |k, v| %>
+        <tr>
+          <td><%= k.humanize %></td>
+          <td><%= v.humanize %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p class="control">
+    <textarea class="textarea" placeholder="Notes"><%= @tile.notes %></textarea>
+  </p>
+</div>
