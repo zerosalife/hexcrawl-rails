@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207202523) do
+ActiveRecord::Schema.define(version: 20160222184727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20160207202523) do
   end
 
   add_index "tiles", ["map_id"], name: "index_tiles_on_map_id", using: :btree
+  add_index "tiles", ["x_coord"], name: "index_tiles_on_x_coord", using: :btree
+  add_index "tiles", ["y_coord"], name: "index_tiles_on_y_coord", using: :btree
 
   add_foreign_key "tiles", "maps"
 end
