@@ -9,6 +9,11 @@ class Map < ActiveRecord::Base
   CODE_LENGTH = 4
   MAP_DIM_SIZE = 8
 
+  def tile_at(x, y)
+    tile_array = Tile.where(map: self, x_coord: x, y_coord: y)
+    tile_array.first if tile_array.any?
+  end
+
   private
 
   def create_code
