@@ -27,6 +27,11 @@
       <% end -%>
     </div>
   </div>
+  <div class="columns">
+    <div class="column">
+      <%= image_tag @tile.tile_icon, size: "100x100" %>
+    </div>
+  </div>
 
   <table class="table is-striped tile-data-table">
     <thead>
@@ -37,7 +42,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @tile.data.each do |k, v| %>
+      <% @tile.data.each do |k, v| -%>
         <tr>
           <td><%= k.humanize %></td>
           <td><%= v.humanize %></td>
@@ -47,7 +52,7 @@
             <% end -%>
           </td>
         </tr>
-      <% end %>
+      <% end -%>
     </tbody>
   </table>
 
