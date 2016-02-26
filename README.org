@@ -1,0 +1,6 @@
+* Hexcrawl
+* Tile Icons
+Tile icons come from [[http://game-icons.net/][game-icons.net]].
+
+- Cactus, Grass, High Grass, Hills, Mountain Cave, and Swamp icons made by [[http://delapouite.com/][Delapouite]] under [[http://creativecommons.org/licenses/by/3.0/][CC BY 3.0]]
+- Desert Skull and Peaks icons made by [[http://lorcblog.blogspot.com/][Lorc]] under [[http://creativecommons.org/licenses/by/3.0/][CC BY 3.0]]
