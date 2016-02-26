@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207202523) do
+ActiveRecord::Schema.define(version: 20160226193804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160207202523) do
   create_table "tiles", force: :cascade do |t|
     t.boolean  "revealed"
     t.json     "data"
-    t.string   "tile_icon"
     t.text     "notes"
     t.integer  "map_id"
     t.datetime "created_at", null: false
