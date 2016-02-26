@@ -10,6 +10,10 @@ class Tile < ActiveRecord::Base
     "%02d%02d" % [x_coord, y_coord]
   end
 
+  def tile_icon
+    TileData.tile_icon data['biome']
+  end
+
   def roll(node = "")
     if node.present?
       if TileData.valid_keys.include?(node)

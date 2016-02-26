@@ -23,6 +23,13 @@ class TileData
     ]
   }
 
+  ICON = {
+    'desert' => 'tile-icons/cactus.svg',
+    'mountain' => 'tile-icons/mountain-cave.svg',
+    'high plains' => 'tile-icons/grass.svg'
+  }
+
+
   def self.valid_keys
     STATIC.keys
   end
@@ -37,6 +44,10 @@ class TileData
         [k, v.sample]
       end
     ]
+  end
+
+  def self.tile_icon(key)
+    ICON[key]
   end
 
 end
