@@ -19,7 +19,11 @@
     <% @map.tiles.each do |t| %>
       <%= link_to(tiles_path(id: t.id, code: @map.code)) do %>
         <div class="tile">
-          <%= image_tag t.tile_icon %>
+          <% if t.revealed -%>
+            <%= image_tag t.tile_icon %>
+          <% else -%>
+            <%= image_tag 'tile-icons/help.svg' %>
+          <% end -%>
           <div class="tile-coordinates">
             <%= t.coords_string %>
           </div>

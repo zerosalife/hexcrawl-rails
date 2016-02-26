@@ -11,5 +11,7 @@ class TilesController < ApplicationController
   def set_tile
     tile_id = params[:id]
     @tile = Tile.find_by(id: tile_id)
+    @tile.revealed = true
+    @tile.save
   end
 end
