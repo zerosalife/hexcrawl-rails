@@ -9,6 +9,10 @@ class Map < ActiveRecord::Base
   CODE_LENGTH = 4
   MAP_DIM_SIZE = 8
 
+  def find_tile_at(x: 0, y: 0)
+    tiles.find_by(x_coord: x, y_coord: y)
+  end
+
   private
 
   def create_code

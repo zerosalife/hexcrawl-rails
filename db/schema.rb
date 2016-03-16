@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20160226193804) do
   end
 
   add_index "tiles", ["map_id"], name: "index_tiles_on_map_id", using: :btree
+  add_index "tiles", ["x_coord"], name: "index_tiles_on_x_coord", using: :btree
+  add_index "tiles", ["y_coord"], name: "index_tiles_on_y_coord", using: :btree
 
   add_foreign_key "tiles", "maps"
 end
