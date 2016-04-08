@@ -7,19 +7,19 @@ class TileData
     ],
 
     'loot' => [
-      "2 gold",
-      "soykaf",
-      "scrap",
-      "2 ammo clips",
-      "a tent"
+      '2 gold',
+      'soykaf',
+      'scrap',
+      '2 ammo clips',
+      'a tent'
     ],
 
     'encounter' => [
-      "3 trolls",
-      "2 raiders",
-      "2 raiders",
-      "3 ghouls",
-      "a glowing one and 3 ghouls"
+      '3 trolls',
+      '2 raiders',
+      '2 raiders',
+      '3 ghouls',
+      'a glowing one and 3 ghouls'
     ]
   }
 
