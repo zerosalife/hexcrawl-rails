@@ -5,7 +5,7 @@ class Map < ActiveRecord::Base
   validates_associated :tiles
   before_validation :create_code, :generate_tiles, on: :create
 
-  CODE_CHARS = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+  CODE_CHARS = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z).freeze
   CODE_LENGTH = 4
   MAP_DIM_SIZE = 8
 
