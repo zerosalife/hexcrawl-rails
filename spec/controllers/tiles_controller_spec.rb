@@ -18,4 +18,15 @@ RSpec.describe TilesController, type: :controller do
     end
   end
 
+  describe "#update" do
+    let(:map) { create(:map) }
+    let(:tile) { create(:tile, map: map) }
+
+    it "patch updates the tiles notes" do
+      patch :update, id: tile.id, tile: {notes: 'test'}
+      tile.reload
+      expect(tile.notes).to eq 'test'
+    end
+  end
+
 end

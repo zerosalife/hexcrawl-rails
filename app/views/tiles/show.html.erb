@@ -57,6 +57,9 @@
   </table>
 
   <p class="control">
-    <textarea class="textarea" placeholder="Notes"><%= @tile.notes %></textarea>
+    <%= form_for @tile, method: 'patch' do |f| %>
+      <%= f.text_area :notes, class: 'textarea', placeholder: 'Notes' %>
+      <%= f.submit 'Save Notes', class: 'button' %>
+    <% end %>
   </p>
 </div>
