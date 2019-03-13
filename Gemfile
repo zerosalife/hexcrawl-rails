@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.4.0'
 
-gem 'rails', '~> 4'
+gem 'rails', '~> 4.2'
 gem 'sprockets', '~>3.7.2'
 gem 'pg', '~> 0.21'
 gem 'sass-rails', '~> 5.0'
