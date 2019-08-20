@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
-
 gem 'rails', '~> 4.2'
 gem 'sprockets', '~>3.7.2'
 gem 'pg', '~> 0.21'
@@ -15,6 +13,7 @@ gem 'json', '~> 1.8.6'
 gem 'puma'
 gem 'bulma-rails', '~> 0.0.4.1'
 gem 'font-awesome-rails'
+gem 'nokogiri', '~> 1.10.4'
 
 gem 'rails_12factor', group: :production
 
