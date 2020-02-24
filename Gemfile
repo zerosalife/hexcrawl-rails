@@ -13,7 +13,7 @@ gem 'json', '~> 1.8.6'
 gem 'puma'
 gem 'bulma-rails', '~> 0.0.4.1'
 gem 'font-awesome-rails'
-gem 'nokogiri', '~> 1.10.4'
+gem 'nokogiri', '~> 1.10.8'
 
 gem 'rails_12factor', group: :production
 
